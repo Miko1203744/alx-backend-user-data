@@ -41,6 +41,8 @@ class DB:
 
     def find_user_by(self, **kwargs)->User:
         """return first row found in the users table"""
+
+
         try:
             result=self._session.query(User).filter_by(**kwargs).first()
         except TypeError:
