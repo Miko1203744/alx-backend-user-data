@@ -32,16 +32,15 @@ class DB:
         return self.__session
 
     
-    def add_user(self,email:str,hashed_password:str)->User:
+    def add_user(self, email: str, hashed_password: str)-> User:
         """adds user to db"""
         new_user=User(email=email, hashed_password=hashed_password)
         self._session.add(new_user)
         self._session.commit()
         return new_user
 
-    def find_user_by(self, **kwargs)->User:
+    def find_user_by(self, **kwargs) -> User:
         """return first row found in the users table"""
-
 
         try:
             result=self._session.query(User).filter_by(**kwargs).first()
