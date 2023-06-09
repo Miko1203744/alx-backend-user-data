@@ -8,7 +8,7 @@ Base = declarative_base()
 
 
 class User(Base):
-   """represnts arecord from the user"""
+    """represnts arecord from the user"""
     __tablename__='users'
     id = Column(Integer, primary_key=True)
     email= Column(String(250), nullable=False)
